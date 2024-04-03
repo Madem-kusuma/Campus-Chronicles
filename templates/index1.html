@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GVP Blog Website</title>
+  <meta name="title" content="GVP Blog Website">
+  <meta name="description" content="This is a blog ">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/style.css">
+  <link rel="preload" as="image" href="./static/hero-banner.png">
+  <link rel="preload" as="image" href="./static/pattern-2.svg">
+  <link rel="preload" as="image" href="./static/pattern-3.svg">
+
+  <style>
+    .container {
+        max-width: 1200px; /* Set maximum width */
+        margin: 0 auto; /* Center align container */
+        padding: 0 15px; /* Add padding to container */
+    }
+    
+    .row {
+        display: flex; /* Use flexbox for row layout */
+        flex-wrap: wrap; /* Allow row to wrap on smaller screens */
+    }
+    
+    .col-12 {
+        flex: 0 0 100%; /* Set column width to full width on smaller screens */
+        max-width: 100%; /* Set maximum width */
+    }
+    
+    .col-md-3 {
+        flex: 0 0 25%; /* Set column width to 25% on medium screens and above */
+        max-width: 25%; /* Set maximum width */
+        padding: 0 15px; /* Add padding to column */
+    }
+    
+    .col-md-6 {
+        flex: 0 0 50%; /* Set column width to 50% on medium screens and above */
+        max-width: 50%; /* Set maximum width */
+        padding: 0 15px; /* Add padding to column */
+    }
+    
+    .des1 {
+        display: flex; /* Use flexbox for column layout */
+        flex-direction: column; /* Arrange items vertically */
+        justify-content: center; /* Center content vertically */
+        text-align: center; /* Center text */
+    }        
+          .footer-section {
+              padding-top: 20px;
+              padding-bottom: 20px;
+              /*background-color: #152632;*/
+              color:rgb(199, 198, 198);
+          }
+      </style>
+
+</head>
+
+<body id="top">
+  <header class="header" data-header>
+    <div class="container">
+      <div style="display: flex;flex-direction: row; align-items: center;">
+      <a href="#" class="logo">
+        <img src="./static/hero-banner.png" width="80" height="30" alt="Wren logo">
+      </a>
+      <h2 style="margin-left: 1vw;">GVPCE BLOG</h2>
+    </div>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="./static/hero-banner.png" width="80" height="30" alt="Wren logo">
+          </a>
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#home" class="navbar-link hover-1" data-nav-toggler>Home</a>
+          </li>
+
+          <li>
+            <a href="#topics" class="navbar-link hover-1" data-nav-toggler>Services</a>
+          </li>
+          <li>
+            <a href="#contact" class="navbar-link hover-1" data-nav-toggler>Contact</a>
+          </li>
+          <li>
+            <a href="/create" class="navbar-link hover-1" data-nav-toggler>Create Post</a>
+          </li>
+
+        </ul>
+
+        <div class="navbar-bottom">
+
+         <div class="profile-card">
+            <img src="./static/author-1.png" width="48" height="48" alt="Steven" class="profile-banner">
+          </div>
+
+        </div>
+      </nav>
+
+      <a href="/" class="btn btn-primary">Logout</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section class="hero" id="home" aria-label="home" style="height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="container">
+
+          <div class="hero-content">
+
+            <p class="hero-subtitle">Hello GVP Students !</p>
+
+            <h1 class="headline headline-1 section-title">
+              Campus <span class="span"> Chronicles</span>
+            </h1>
+
+            <p class="hero-text" style="font-size: 20px;text-align: justify;">
+              Explore Campus Chronicles: The College Blog, your central source for club updates, tech fests, cultural events, and more. Dive into club spotlights, hackathons, cultural corners, faculty insights, and student perspectives. Join us as we celebrate campus life and foster a vibrant community. Welcome to a dynamic platform where students connect and campus culture thrives.
+            </p>
+
+          </div>
+
+          <div class="hero-banner">
+
+            <img src="./static/hero-banner.png" width="327" height="490" alt="Wren Clark" class="w-100">
+
+            <img src="./static/pattern-2.svg" width="27" height="26" alt="shape" class="shape shape-1">
+
+            <img src="./static/pattern-3.svg" width="27" height="26" alt="shape" class="shape shape-2">
+
+          </div>
+
+          <img src="./static/shadow-1.svg" width="500" height="800" alt="" class="hero-bg hero-bg-1">
+
+          <img src="./static/shadow-2.svg" width="500" height="500" alt="" class="hero-bg hero-bg-2">
+
+        </div>
+      </section>
+      <section class="topics" id="topics" aria-labelledby="topic-label" style="height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+        <div class="container">
+          <h2 class="headline headline-2 section-title" style="font-size: 40px;">
+            <span class="span">Services</span>
+          </h2>
+          
+          <div class="card topic-card"> 
+            <div class="card-content">
+              <p class="card-text">
+                Don't miss out on the latest news about cultural events,sports, Hackathons...
+              </p>
+
+              <div class="btn-group">
+                <button class="btn-icon" aria-label="previous" data-slider-prev>
+                  <ion-icon name="arrow-back" aria-hidden="true"></ion-icon>
+                </button>
+
+                <button class="btn-icon" aria-label="next" data-slider-next>
+                  <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+                </button>
+              </div>
+
+            </div>
+
+            <div class="slider" data-slider>
+              <ul class="slider-list" data-slider-container>
+
+                <li class="slider-item">
+                  <a href="/sports" class="slider-card">
+
+                    <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                      <img src="./static/topic-1.png" width="507" height="618" loading="lazy" alt="Sport"
+                        class="img-cover">
+                    </figure>
+
+                    <div class="slider-content">
+                      <span class="slider-title">Sport</span>
+                      <p class="slider-subtitle"><span id="sportcount"></span>Articles</p>
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="slider-item">
+                  <a href="/clubs" class="slider-card">
+
+                    <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                      <img src="./static/topic-2.png" width="507" height="618" loading="lazy" alt="Travel"
+                        class="img-cover">
+                    </figure>
+
+                    <div class="slider-content">
+                      <span class="slider-title">Clubs</span>
+
+                      <p class="slider-subtitle"><span id="clubcount"></span> Articles</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="slider-item">
+                  <a href="/hackathon" class="slider-card">
+
+                    <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                      <img src="./static/topic-3.png" width="507" height="618" loading="lazy" alt="Design"
+                        class="img-cover">
+                    </figure>
+
+                    <div class="slider-content">
+                        <span class="slider-title">Hackathons</span>                  
+                      <p class="slider-subtitle"><span id="hackcount"></span> Articles</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li class="slider-item">
+                  <a href="/fests" class="slider-card">
+
+                    <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                      <img src="./static/fest1.jpg" width="507" height="618" loading="lazy" alt="Movie"
+                        class="img-cover">
+                    </figure>
+
+                    <div class="slider-content">
+                      <span class="slider-title">Fests</span>
+
+                      <p class="slider-subtitle"><span id="festcount"></span>Articles</p>
+                    </div>
+
+                  </a>
+                </li>
+
+                <li class="slider-item">
+                  <a href="/culturals" class="slider-card">
+
+                    <figure class="slider-banner img-holder" style="--width: 507; --height: 618;">
+                      <img src="./static/cult1.jpg" width="507" height="618" loading="lazy" alt="Lifestyle"
+                        class="img-cover">
+                    </figure>
+
+                    <div class="slider-content">
+                      <span class="slider-title">Culturals</span>
+                      
+                      <p class="slider-subtitle"><span id="culturalcount"></span> Articles</p>
+                    </div>
+
+                  </a>
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    </article>
+  </main>
+  <div class="footer-section pt-5 pb-5">
+    <div class="container">
+      <h2 class="headline headline-2 section-title" style="font-size: 40px;" id="contact">
+        <span class="span">Contact</span>
+      </h2>
+        <div class="row foot">
+            <div class="des1 col-12 col-md-3">
+                <h1 style="color:white; text-align: center;">Address</h1>
+                <h3 style="text-align: center;">GVPCE(A) <br> Madhurawada, 530048</h3>
+            </div>
+            <div class="des1 col-12 col-md-6">
+                <img src="./static/hero-banner.png" width="119" height="37" loading="lazy" alt="Wren logo" style="margin: 0 auto 20px; display: block;">
+                <p style="text-align: justify;">Connect with us at Campus Chronicles to share your stories, inquiries, and collaborations. We're here to foster dialogue and community engagement within the GVP ecosystem.</p>
+            </div>
+            <div class="des1 col-12 col-md-3">
+                 <h2 style="color:white; text-align: center;">For Any Queries contact</h2>
+                <div style="text-align: center;">
+                    <h4>9346694903</h4>
+                    <h4>9392555763</h4>
+                    <h4>8008651603</h4>
+                    <h4>7702410610</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="arrow-up-outline" aria-hidden="true"></ion-icon>
+  </a>
+  <script src="./static/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script>
+    var sportCount = localStorage.getItem("sportcount");
+    var festCount = localStorage.getItem("festcount");
+    var culturalCount = localStorage.getItem("culturalcount");
+    var clubCount = localStorage.getItem("clubcount");
+    var hackCount = localStorage.getItem("hackcount");
+
+    // Update HTML content with counts
+    document.getElementById("sportcount").textContent = sportCount;
+    document.getElementById("festcount").textContent = festCount;
+    document.getElementById("culturalcount").textContent = culturalCount;
+    document.getElementById("clubcount").textContent = clubCount;
+    document.getElementById("hackcount").textContent = hackCount;
+
+  </script>
+</body>
+</html>

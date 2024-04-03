@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./static/style.css">
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
+}
+
+.title {
+  color: grey;
+  font-size: 18px;
+}
+
+button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #11c3e2;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
+}
+.back-button {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  top: 20px;
+  left: 20px;
+  color: white;
+  background-color: #11c3e2;
+  border-radius: 10px;
+  width: 160px;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+
+}
+
+button:hover, a:hover {
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+
+<a class="back-button" href="/index1"><span><i class="fa fa-arrow-left"></i> </span> HOME</a>  
+<h2 style="text-align:center">User Profile Card</h2>
+
+<div class="card">
+  <center><img src="./static/avatar.jpg" alt="User Avatar" style="width:60%; height: 60%;"></center>
+  <h1><span style="color: #11c3e2;">Username : </span>{{ existing_user[0] }}</h1>
+  <h2><span style="color: #11c3e2;">Email : </span>{{ existing_user[1] }}</h2>
+  <!-- <h2><span style="color: #11c3e2;">Password : </span>{{ existing_user[2] }}</h2>
+   Additional content if needed -->
+   <center><a href="/" class="btn btn-primary" >Logout </a> </center>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+ 
+  <p><button > <span style="opacity: 0;">+919494212599</span></button></p>
+</div>
+
+</body>
+</html>

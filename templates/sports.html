@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>GVP Blog Website</title>
+  <meta name="title" content="GVP Blog Website">
+  <meta name="description" content="This is a blog html template made by GVP Students">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./static/sports.css">
+  <link rel="stylesheet" href="./static/style.css">
+</head>
+<h1 style="display: flex;flex-direction: row;justify-content: center;">Sports</h1>
+<button class="btn btn-primary" id="goToIndexButton">
+  <i class='fas fa-arrow-left' style='font-size:24px'></i>
+</button>
+
+<body>
+  <div class="container">
+    <div class="card feature-card">
+      <figure class="card-banner img-holder medium-banner">
+        <img src="./static/featured-4.png" loading="lazy" alt="Self-observation is the first step of inner unfolding" class="img-cover">
+      </figure>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div class="card-wrapper">
+      <div class="wrapper">
+        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      </div>
+    </div>
+    <h3 class="headline headline-3">
+      <a href="#" class="card-title hover-2">Embrace sports, foster excellence</a>
+    </h3>
+    <h4>
+      🎊Winners.....#sports#basketball<br> 
+    </h4>
+  </div>
+
+  <div style="text-align: center; display:flex; flex-direction: column; justify-content: center;" >
+  <h1>Please add your comment</h1>
+    <div id="comment-container">
+        <!-- Existing comments will go here -->
+    </div>
+    <center>
+    <textarea name="" id="new-comment" cols="60" rows="5" style="width: 400px;text-align: center;"></textarea>
+    <br>
+    <button id="btn-post" class="btn-primary" style="background-color: aqua; border-radius: 10px;width: 100px;color: rgb(1, 21, 39);">Post</button></center>
+  </div>
+
+  <div class="container">
+    <div class="card feature-card">
+      <figure class="card-banner img-holder medium-banner">
+        <img src="./static/topic-1.png" loading="lazy"  class="img-cover">
+      </figure>
+    </div>
+  </div>
+  <div class="card-content">
+    <div class="card-wrapper">
+      <div class="wrapper">
+        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      </div>
+    </div>
+    <h3 class="headline headline-3">
+      <a href="#" class="card-title hover-2">Embrace sports, foster excellence</a>
+    </h3>
+    <h4>
+      Match day.....!!!!!!!!!!!!!🎊<br> 
+    </h4>
+  </div>
+  <div style="text-align: center; display:flex; flex-direction: column; justify-content: center;" >
+    <h1>Please add your comment</h1>
+      <div id="comment-container1">
+          <!-- Existing comments will go here -->
+      </div>
+      <center>
+      <textarea name="" id="new-comment1" cols="60" rows="5" style="width: 400px;text-align: center;"></textarea>
+      <br>
+      <button id="btn-post1" class="btn-primary" style="background-color: aqua; border-radius: 10px;width: 100px;color: rgb(1, 21, 39);">Post</button></center>
+    </div>
+
+
+  <div id="dynamicContent"></div>
+
+  <script>
+
+    // Clear entire stored content from Local Storage
+    // localStorage.removeItem("sportstoredContent");
+
+    document.getElementById("btn-post").addEventListener("click", function () {
+    // This line sets up an event listener for the click event on the "Post" button.
+    // When the button is clicked, the function provided as the second argument will run.
+
+    // Step 2: Get the comment from the textarea
+    const newComment = document.getElementById("new-comment").value;
+
+    // Step 3: Create a new paragraph element for the comment
+    const commentContainer = document.getElementById("comment-container");
+    const commentElement = document.createElement("p");
+    commentElement.innerText = newComment;
+
+    // Step 4: Append the comment to the comment container
+    commentContainer.appendChild(commentElement);
+
+    // Clear the textarea after posting the comment
+    document.getElementById("new-comment").value = "";
+});
+
+
+document.getElementById("btn-post1").addEventListener("click", function () {
+    // This line sets up an event listener for the click event on the "Post" button.
+    // When the button is clicked, the function provided as the second argument will run.
+
+    // Step 2: Get the comment from the textarea
+    const newComment = document.getElementById("new-comment1").value;
+
+    // Step 3: Create a new paragraph element for the comment
+    const commentContainer = document.getElementById("comment-container1");
+    const commentElement = document.createElement("p");
+    commentElement.innerText = newComment;
+
+    // Step 4: Append the comment to the comment container
+    commentContainer.appendChild(commentElement);
+
+    // Clear the textarea after posting the comment
+    document.getElementById("new-comment1").value = "";
+});
+
+    function countContainersWithImages() {
+    var containersWithImages = document.querySelectorAll('.container img').length;
+      
+      // Count containers with images from local storage
+      var sportstoredContent = JSON.parse(localStorage.getItem("sportstoredContent")) || [];
+      sportstoredContent.forEach(function(item) {
+        if (item.imgdata) {
+          containersWithImages++;
+        }
+      });
+
+      return containersWithImages;
+    }
+
+    // Example usage:
+    var containerCount = countContainersWithImages();
+
+    localStorage.setItem("sportcount", containerCount);
+
+
+    
+    
+    document.getElementById("goToIndexButton").addEventListener("click", function() {
+      // Redirect to index.html
+      window.location.href = "/index1";
+    });
+  
+  
+    function createAndSaveCardContent(title, content,imgdata) {
+    // Create a unique ID for the card content
+    var uniqueId = 'card-content-' + Date.now();
+
+    // Save the card content to local storage
+    var sportstoredContent = JSON.parse(localStorage.getItem("sportstoredContent")) || [];
+    sportstoredContent.push({ id: uniqueId, title: title, content: content,imgdata:imgdata });
+    localStorage.setItem("sportstoredContent", JSON.stringify(sportstoredContent));
+}
+
+// Load stored card content from local storage on page load
+window.onload = function() {
+    var sportstoredContent = JSON.parse(localStorage.getItem("sportstoredContent")) || [];
+    sportstoredContent.forEach(function(item) {
+        // Check if imgdata exists
+        if (item.imgdata) {
+            var uniqueId = 'card-content-' + Date.now();
+            var cardContentHTML = `
+                <div id="${uniqueId}">
+                  <div class="container">
+                      <div class="card feature-card">
+                        <figure class="card-banner img-holder medium-banner">
+                          <img src="data:image/png;base64,${ item.imgdata }">
+                        </figure>
+                      </div>
+                    </div> 
+                  
+                  <div class="card-content">
+                    <h3 class="headline headline-3">
+                        <a href="#" class="card-title hover-2">${item.title}</a>
+                    </h3>
+                    <h4>${item.content}</h4>
+                  </div>  
+
+                </div>`;
+            document.getElementById("dynamicContent").innerHTML += cardContentHTML;
+        }
+    });
+};
+
+  // Example usage:
+  var titleFromApp = "{{title}}"; // Replace with actual title variable from app.py
+  var contentFromApp = "{{content}}";// Replace with actual content variable from app.py
+  var imgdata ="{{image_data}}";
+
+  createAndSaveCardContent(titleFromApp, contentFromApp,imgdata);
+  </script>
+
+</body>
+
+</html>

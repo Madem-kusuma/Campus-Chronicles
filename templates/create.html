@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Post</title>
+<style>
+    body{
+    color: white;
+    /*background-image: url('https://img.freepik.com/free-photo/blue-smooth-wall-textured-background_53876-106133.jpg?w=826&t=st=1710609371~exp=1710609971~hmac=43b9564dceec76ad4db023d1db8bc1b831a58508558f78821b2714539fe74216');*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+    /* CSS styles */
+    .container {
+        margin: 50px 100px;
+    }
+    @media (max-width: 960px) {
+        .container {
+            margin: 0;
+        }
+    }
+    .image {
+        width: 100%;
+        height: 50vh;
+        object-fit: cover;
+    }
+    .form-control {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+    }
+    .input-text-field {
+        flex: 1;
+        margin: 0 30px;
+        font-size: 25px;
+    }
+    .textarea {
+        width: 100%;
+        border: none;
+        margin-top: 50px;
+        font-size: 18px;
+    }
+
+
+    .container {
+    position: relative; /* Set container as reference for absolute positioning */
+  }
+  
+ 
+  
+  .medium-banner {
+    width: 50%; /* Set to the desired width */
+    height: 50%; /* Maintain aspect ratio */
+    margin: auto; /* Center the image horizontally */
+    display: block; /* Ensure the image is displayed as a block element */
+  }
+  .medium-banner img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .card-content {
+    text-align: center; /* Align content below the image to the center */
+    margin-top: 20px; /* Adjust spacing from the image as needed */
+  }   
+  .input-text-field {
+    flex: 1;
+    margin: 0 30px;
+    font-size: 25px;
+    background-color: white; /* Set background color to white */
+    border-radius: 15px; /* Set border radius to 15px */
+    border: none; /* Remove default border */
+    padding: 10px; /* Add padding for better visual appearance */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    outline: none; /* Remove default outline */
+}
+
+</style>
+    <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+  
+    <!-- 
+      - google font link
+    -->
+
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+  
+</head>
+
+
+<h1 style="display: flex;flex-direction: row;justify-content: center; color: white; font-size: 42px;">Create Post</h1>
+
+<button class="btn btn-primary" id="goToIndexButton" style="position: absolute;">
+    <i class='fas fa-arrow-left' style='font-size:24px'></i>
+  </button>
+
+<body>
+    <div class="container">
+        <img class="image" src="https://images.unsplash.com/photo-1543128639-4cb7e6eeef1b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bGFwdG9wJTIwc2V0dXB8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80" alt="post">
+       
+        <form  action="" method="post" enctype="multipart/form-data">
+            <div class="form-control">
+                
+                <input type="text" name="title" class="input-text-field" placeholder="Title">
+                <select name="category" class="category-dropdown" onchange="updateCategory()">
+                    <option value="">Select Category</option>
+                    <option value="sports">sports</option>
+                    <option value="clubs">clubs</option>
+                    <option value="hackathon">hackathon</option>
+                    <option value="fests">fests</option>
+                    <option value="culturals">culturals</option>
+                </select>
+            </div>
+            <textarea name="content" class="textarea" rows="5" placeholder="Tell your story..."></textarea>
+            <div>
+                <label>Image:</label><br>
+                <input type="file" name="image" id="imageInput" accept="image/*" style="margin-top: 20px;">
+            </div>
+            <button type="submit" class="btn btn-primary">Publish</button>
+        </form>
+    </div>
+
+<script>
+    // JavaScript code
+
+    document.getElementById("goToIndexButton").addEventListener("click", function() {
+      // Redirect to index.html
+      window.location.href = "/index1";
+    });
+
+    function savePost() {
+        alert("Publishing post...");
+    }
+
+    function updateCategory() {
+        const selectedCategory = document.querySelector('.category-dropdown').value;
+        // Update the selected category in your data or perform any other action as needed
+        console.log("Selected category:", selectedCategory);
+    }
+
+    function previewFile(event) {
+        const preview = document.querySelector('.image');
+        const file = event.target.files[0];
+        const reader = new FileReader();
+
+        reader.onloadend = function () {
+            preview.src = reader.result;
+        }
+
+        if (file) {
+            reader.readAsDataURL(file);
+        } else {
+            preview.src = "";
+        }
+    }
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/20c5629a29.js" crossorigin="anonymous"></script>
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>GVP Blog Website</title>
+  <meta name="title" content="GVP Blog Website">
+  <meta name="description" content="This is a blog html template made by GVP Students">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./static/sports.css">
+  <link rel="stylesheet" href="./static/style.css">
+</head>
+<h1 style="display: flex;flex-direction: row;justify-content: center;">Clubs</h1>
+<button class="btn btn-primary" id="goToIndexButton">
+  <i class='fas fa-arrow-left' style='font-size:24px'></i>
+</button>
+
+<body>
+  <div class="container">
+    <div class="card feature-card">
+      <figure class="card-banner img-holder medium-banner">
+        <img src="./static/yfs1.jpg" loading="lazy" alt="Self-observation is the first step of inner unfolding" class="img-cover">
+      </figure>
+    </div>
+  </div>
+
+  <div class="card-content">
+    <div class="card-wrapper">
+      <div class="wrapper">
+        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      </div>
+    </div>
+    <h3 class="headline headline-3">
+      <a href="#" class="card-title hover-2">World Wildlife Day</a>
+    </h3>
+    <h4>
+      World Wildlife Day, celebrated on March 3rd each year, is a global tribute to the rich diversity of wild fauna and flora that adorn our planet. It's a day that reminds us of the pressing need to intensify our efforts against wildlife crime, which poses significant threats to the economy, environment, and society. 🌍🐅🌿
+
+      This year, the theme is “Connecting People and Planet: Exploring Digital Innovation in Wildlife Conservation.” It’s a call to leverage technology to bridge the gap between humanity and nature, ensuring the welfare of our planet for future generations. 📱💡🌱
+      
+      World Wildlife Day urges individuals, organizations, and governments to unite in the conservation of wildlife, highlighting its vital role in sustainable development and human well-being.🌺🦓🌎<br> 
+    </h4>
+  </div>
+  <div style="text-align: center; display:flex; flex-direction: column; justify-content: center;" >
+    <h1>Please add your comment</h1>
+      <div id="comment-container2">
+          <!-- Existing comments will go here -->
+      </div>
+      <center>
+      <textarea name="" id="new-comment2" cols="60" rows="5" style="width: 400px;text-align: center;"></textarea>
+      <br>
+      <button id="btn-post2" class="btn-primary" style="background-color: aqua; border-radius: 10px;width: 100px;color: rgb(1, 21, 39);">Post</button></center>
+    </div>
+
+  <div class="container">
+    <div class="card feature-card">
+      <figure class="card-banner img-holder medium-banner">
+        <img src="./static/featured-3.png" loading="lazy"  class="img-cover">
+      </figure>
+    </div>
+  </div>
+  <div class="card-content">
+    <div class="card-wrapper">
+      <div class="wrapper">
+        <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+      </div>
+    </div>
+    <h3 class="headline headline-3">
+      <a href="#" class="card-title hover-2">NSS fitness challenge</a>
+    </h3>
+    <h4>
+      NSS Fitness Challenge: Engage in various physical activities and competitions to promote fitness and well-being within our college community<br> 
+    </h4>
+  </div>
+  <div style="text-align: center; display:flex; flex-direction: column; justify-content: center;" >
+    <h1>Please add your comment</h1>
+      <div id="comment-container3">
+          <!-- Existing comments will go here -->
+      </div>
+      <center>
+      <textarea name="" id="new-comment3" cols="60" rows="5" style="width: 400px;text-align: center;"></textarea>
+      <br>
+      <button id="btn-post3" class="btn-primary" style="background-color: aqua; border-radius: 10px;width: 100px;color: rgb(1, 21, 39);">Post</button></center>
+    </div>
+  <div id="dynamicContent"></div>
+
+
+ 
+  <script>
+
+    // Clear entire stored content from Local Storage
+    //localStorage.removeItem("clubstoredContent");
+  
+    document.getElementById("btn-post2").addEventListener("click", function () {
+    // This line sets up an event listener for the click event on the "Post" button.
+    // When the button is clicked, the function provided as the second argument will run.
+
+    // Step 2: Get the comment from the textarea
+    const newComment = document.getElementById("new-comment2").value;
+
+    // Step 3: Create a new paragraph element for the comment
+    const commentContainer = document.getElementById("comment-container2");
+    const commentElement = document.createElement("p");
+    commentElement.innerText = newComment;
+
+    // Step 4: Append the comment to the comment container
+    commentContainer.appendChild(commentElement);
+
+    // Clear the textarea after posting the comment
+    document.getElementById("new-comment2").value = "";
+});
+document.getElementById("btn-post3").addEventListener("click", function () {
+    // This line sets up an event listener for the click event on the "Post" button.
+    // When the button is clicked, the function provided as the second argument will run.
+
+    // Step 2: Get the comment from the textarea
+    const newComment = document.getElementById("new-comment3").value;
+
+    // Step 3: Create a new paragraph element for the comment
+    const commentContainer = document.getElementById("comment-container3");
+    const commentElement = document.createElement("p");
+    commentElement.innerText = newComment;
+
+    // Step 4: Append the comment to the comment container
+    commentContainer.appendChild(commentElement);
+
+    // Clear the textarea after posting the comment
+    document.getElementById("new-comment3").value = "";
+});
+
+
+    function countContainersWithImages() {
+    var containersWithImages = document.querySelectorAll('.container img').length;
+    
+    // Count containers with images from local storage
+    var clubstoredContent = JSON.parse(localStorage.getItem("clubstoredContent")) || [];
+    clubstoredContent.forEach(function(item) {
+      if (item.imgdata) {
+        containersWithImages++;
+      }
+    });
+
+    return containersWithImages;
+  }
+
+  // Example usage:
+  var containerCount = countContainersWithImages();
+
+  localStorage.setItem("clubcount", containerCount);
+    
+      
+    document.getElementById("goToIndexButton").addEventListener("click", function() {
+      // Redirect to index.html
+      window.location.href = "/index1";
+    });
+  
+  
+    function createAndSaveCardContent(title, content,imgdata) {
+    // Create a unique ID for the card content
+    var uniqueId = 'card-content-' + Date.now();
+
+    // Save the card content to local storage
+    var clubstoredContent = JSON.parse(localStorage.getItem("clubstoredContent")) || [];
+    clubstoredContent.push({ id: uniqueId, title: title, content: content,imgdata:imgdata });
+    localStorage.setItem("clubstoredContent", JSON.stringify(clubstoredContent));
+}
+
+// Load stored card content from local storage on page load
+window.onload = function() {
+    var clubstoredContent = JSON.parse(localStorage.getItem("clubstoredContent")) || [];
+    clubstoredContent.forEach(function(item) {
+        // Check if imgdata exists
+        if (item.imgdata) {
+            var uniqueId = 'card-content-' + Date.now();
+            var cardContentHTML = `
+                <div id="${uniqueId}">
+                  <div class="container">
+                      <div class="card feature-card">
+                        <figure class="card-banner img-holder medium-banner">
+                          <img src="data:image/png;base64,${ item.imgdata }">
+                        </figure>
+                      </div>
+                    </div> 
+                  
+                  <div class="card-content">
+                    <h3 class="headline headline-3">
+                        <a href="#" class="card-title hover-2">${item.title}</a>
+                    </h3>
+                    <h4>${item.content}</h4>
+                  </div>  
+
+                </div>`;
+            document.getElementById("dynamicContent").innerHTML += cardContentHTML;
+        }
+    });
+};
+
+  // Example usage:
+  var titleFromApp = "{{title}}"; // Replace with actual title variable from app.py
+  var contentFromApp = "{{content}}";// Replace with actual content variable from app.py
+  var imgdata ="{{image_data}}";
+
+  createAndSaveCardContent(titleFromApp, contentFromApp,imgdata);
+  </script>
+
+</body>
+
+</html>
